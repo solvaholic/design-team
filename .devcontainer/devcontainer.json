@@ -1,0 +1,27 @@
+{
+  "name": "Design Team",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic"
+      }
+    }
+  },
+  
+  "postCreateCommand": "pip install --upgrade pip && pip install -e .",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  
+  "remoteUser": "vscode"
+}

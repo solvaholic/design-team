@@ -1,0 +1,8 @@
+[project]
+name = "design-team"
+version = "0.1.0"
+authors = [
+    { name = "Roger D. Winans", email = "solvaholic@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = []

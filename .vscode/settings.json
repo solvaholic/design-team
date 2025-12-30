@@ -1,0 +1,14 @@
+{
+  "python.analysis.typeCheckingMode": "basic",
+  "github.copilot.advanced": {},
+  "files.associations": {
+    "*.agent.md": "markdown",
+    "**/SKILL.md": "markdown",
+    "*.instructions.md": "markdown"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true
+  }
+}

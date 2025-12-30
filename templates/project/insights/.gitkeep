@@ -1,0 +1,4 @@
+# .gitkeep
+
+This file ensures the insights/ folder is tracked by git even when empty.
+Delete this file once you add actual research notes.

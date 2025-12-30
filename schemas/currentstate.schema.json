@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design Project Current State",
+  "description": "Schema for tracking the current state of a design project through the design thinking process",
+  "type": "object",
+  "required": ["project_name", "created_at", "updated_at", "phase"],
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "description": "Name of the design project"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this project was created"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time this state was updated"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["empathize", "define", "ideate", "prototype", "iterate"],
+      "description": "Current design thinking phase"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the project or problem space"
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Key assumptions being made in this project",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "certainty", "risk"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this assumption"
+          },
+          "description": {
+            "type": "string",
+            "description": "What we're assuming to be true"
+          },
+          "certainty": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "How confident we are this is true"
+          },
+          "risk": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Impact if this assumption is wrong"
+          },
+          "validation_plan": {
+            "type": "string",
+            "description": "How we plan to validate or invalidate this assumption"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "validating", "validated", "invalidated"],
+            "description": "Current status of this assumption"
+          }
+        }
+      }
+    },
+    "stakeholders": {
+      "type": "array",
+      "description": "Stakeholder groups and individuals",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this stakeholder"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the stakeholder or group"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["group", "individual"],
+            "description": "Whether this is a group or individual stakeholder"
+          },
+          "role": {
+            "type": "string",
+            "description": "Their role or relationship to the project"
+          },
+          "needs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Known or assumed needs"
+          },
+          "pain_points": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Known pain points or frustrations"
+          },
+          "notes_links": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Links to observation, empathy, or interview notes"
+          }
+        }
+      }
+    },
+    "research_plan": {
+      "type": "object",
+      "description": "Plan for researching and validating the problem space",
+      "properties": {
+        "questions": {
+          "type": "array",
+          "description": "Key questions we need to answer",
+          "items": {
+            "type": "object",
+            "required": ["id", "question", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for this question"
+              },
+              "question": {
+                "type": "string",
+                "description": "The question to be answered"
+              },
+              "purpose": {
+                "type": "string",
+                "description": "Why this question matters"
+              },
+              "method": {
+                "type": "string",
+                "description": "How we plan to answer it"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["pending", "in-progress", "answered"],
+                "description": "Status of this research question"
+              },
+              "findings_link": {
+                "type": "string",
+                "description": "Link to notes or insights that answer this question"
+              }
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "type": "array",
+      "description": "Synthesized findings and insights from research",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this insight"
+          },
+          "title": {
+            "type": "string",
+            "description": "Short title for the insight"
+          },
+          "description": {
+            "type": "string",
+            "description": "The insight itself"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Confidence level in this insight"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Links to research notes, visualizations, or data"
+          },
+          "implications": {
+            "type": "string",
+            "description": "What this means for the design"
+          }
+        }
+      }
+    },
+    "ideas": {
+      "type": "array",
+      "description": "Solution ideas being explored",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "status"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this idea"
+          },
+          "title": {
+            "type": "string",
+            "description": "Short title for the idea"
+          },
+          "description": {
+            "type": "string",
+            "description": "What this idea is"
+          },
+          "impact": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Expected impact if successful"
+          },
+          "feasibility": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "How feasible this is to implement"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["ideated", "prototyping", "iterating", "validated", "invalidated", "implemented"],
+            "description": "Current status of this idea"
+          },
+          "idea_doc_link": {
+            "type": "string",
+            "description": "Link to detailed idea document"
+          },
+          "prototype_links": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Links to prototype notes and iterations"
+          }
+        }
+      }
+    },
+    "playbacks": {
+      "type": "array",
+      "description": "Record of playback sessions with leadership/stakeholders",
+      "items": {
+        "type": "object",
+        "required": ["id", "date", "audience"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this playback"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "When the playback occurred"
+          },
+          "audience": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Who attended the playback"
+          },
+          "phase": {
+            "type": "string",
+            "description": "What phase was being presented"
+          },
+          "artifacts_link": {
+            "type": "string",
+            "description": "Link to playback materials folder"
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key decisions or directions from this playback"
+          }
+        }
+      }
+    }
+  }
+}

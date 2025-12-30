@@ -1,0 +1,49 @@
+{
+  "project_name": "New Design Project",
+  "created_at": "2025-12-29T00:00:00Z",
+  "updated_at": "2025-12-29T00:00:00Z",
+  "phase": "empathize",
+  "description": "Brief description of the problem space or opportunity",
+  "assumptions": [
+    {
+      "id": "a1",
+      "description": "Example assumption about user behavior or market conditions",
+      "certainty": "low",
+      "risk": "high",
+      "validation_plan": "How we'll test this assumption",
+      "status": "open"
+    }
+  ],
+  "stakeholders": [
+    {
+      "id": "s1",
+      "name": "Example Stakeholder Group",
+      "type": "group",
+      "role": "Primary users or decision makers",
+      "needs": [
+        "Need or goal identified"
+      ],
+      "pain_points": [
+        "Current frustration or challenge"
+      ],
+      "notes_links": [
+        "insights/stakeholder_observation.md"
+      ]
+    }
+  ],
+  "research_plan": {
+    "questions": [
+      {
+        "id": "q1",
+        "question": "What problem are we really solving?",
+        "purpose": "Understand the core problem space",
+        "method": "User interviews and observation",
+        "status": "pending",
+        "findings_link": ""
+      }
+    ]
+  },
+  "insights": [],
+  "ideas": [],
+  "playbacks": []
+}

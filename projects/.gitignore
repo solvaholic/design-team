@@ -1,0 +1,15 @@
+# Ignore all projects by default
+*
+
+# Exclude the .gitignore file itself to allow tracking of this file
+!.gitignore
+
+# To track a specific project, add an exclusion below:
+# !my-project-name/
+#
+# Example - to commit the "customer-portal" project:
+# !customer-portal/
+#
+# After adding the exclusion, stage and commit normally:
+# git add projects/customer-portal/
+# git commit -m "Add customer-portal project"

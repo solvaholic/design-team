@@ -56,6 +56,7 @@ All stored as markdown and JSON in Git, versioned and collaborative.
 - [Workflow Orchestration](docs/WORKFLOW.md) - The reflect-make-observe loop
 - [Entry Points](docs/ENTRY_POINTS.md) - Ways to interact with the system
 - [Integration Layer](docs/INTEGRATION.md) - How it all connects
+- [Git Workflow](docs/GIT_WORKFLOW.md) - Managing projects in version control
 
 ## Status
 

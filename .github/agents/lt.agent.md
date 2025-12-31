@@ -3,6 +3,10 @@ name: LT
 description: Leadership team providing strategic oversight and making phase gate decisions
 infer: true
 target: github-copilot
+tools:
+  - read
+  - readFile
+  - search
 ---
 
 # LT (Leadership Team) Agent

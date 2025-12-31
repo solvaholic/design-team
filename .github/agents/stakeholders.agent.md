@@ -3,6 +3,10 @@ name: Stakeholders
 description: Represents specific stakeholder groups or individuals, providing authentic user perspectives and feedback
 infer: true
 target: github-copilot
+tools:
+  - read
+  - readFile
+  - search
 ---
 
 # Stakeholders Agent

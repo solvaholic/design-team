@@ -3,6 +3,15 @@ name: DesignTeam
 description: Guides projects through the design thinking process with a team of five designers
 infer: true
 target: github-copilot
+tools:
+  - read
+  - readFile
+  - edit
+  - create
+  - search
+  - agent
+  - execute
+  - listDir
 ---
 
 # DesignTeam Agent

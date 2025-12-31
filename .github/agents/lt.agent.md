@@ -4,8 +4,7 @@ description: Leadership team providing strategic oversight and making phase gate
 infer: true
 target: github-copilot
 tools:
-  - read
-  - readFile
+  - read/readFile
   - search
 ---
 

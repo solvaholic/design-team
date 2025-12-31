@@ -4,14 +4,11 @@ description: Guides projects through the design thinking process with a team of 
 infer: true
 target: github-copilot
 tools:
-  - read
-  - readFile
-  - edit
-  - create
-  - search
   - agent
+  - edit
   - execute
-  - listDir
+  - read/readFile
+  - search
 ---
 
 # DesignTeam Agent

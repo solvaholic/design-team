@@ -10,5 +10,10 @@
     "**/__pycache__": true,
     "**/.pytest_cache": true,
     "**/*.pyc": true
-  }
+  },
+  "chat.useAgentSkills": true,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.tools.terminal.autoApprove": {
+    "python scripts/": true,
+  },
 }

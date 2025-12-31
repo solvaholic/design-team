@@ -4,8 +4,7 @@ description: Represents specific stakeholder groups or individuals, providing au
 infer: true
 target: github-copilot
 tools:
-  - read
-  - readFile
+  - read/readFile
   - search
 ---
 

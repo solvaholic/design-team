@@ -50,6 +50,7 @@ All stored as markdown and JSON in Git, versioned and collaborative.
 
 ## Documentation
 
+**Using the System:**
 - [Data Structures](docs/DATA_STRUCTURES.md) - Schema and templates
 - [Agent System](.github/agents/README.md) - How agents work together
 - [Skills Framework](.github/skills/README.md) - Design methods and techniques
@@ -57,6 +58,9 @@ All stored as markdown and JSON in Git, versioned and collaborative.
 - [Entry Points](docs/ENTRY_POINTS.md) - Ways to interact with the system
 - [Integration Layer](docs/INTEGRATION.md) - How it all connects
 - [Git Workflow](docs/GIT_WORKFLOW.md) - Managing projects in version control
+
+**Extending the System:**
+- [Contributing Guide](CONTRIBUTING.md) - How to add skills, agents, and instructions
 
 ## Status
 

@@ -111,7 +111,7 @@ Before committing instruction/skill/agent changes:
 4. Update documentation to reflect changes
 5. Run helper scripts to validate structure:
    ```bash
-   python scripts/validate_state.py --project test-project
+   python3 scripts/validate_state.py --project test-project
    ```
 
 ## Python Helper Scripts

@@ -17,7 +17,7 @@ Are we in a project with currentstate.json?
 
 **No project exists:**
 - Ask user for project name and problem statement
-- Run: `python scripts/scaffold_artifact.py --type project --name [project-name]`
+- Run: `python3 scripts/scaffold_artifact.py --type project --name [project-name]`
 - Initialize currentstate.json with Empathize phase
 - Guide user to define stakeholders
 

@@ -16,19 +16,12 @@ The system uses AI agents (powered by GitHub Copilot) to guide you through each 
 
 ## Try it out
 
-**In VS Code:**
+### Option 1: VS Code with GitHub Copilot (Recommended)
 
-1. Open this workspace
+1. Open this workspace in VS Code
 2. Type `/solve` in Copilot Chat
 3. Describe a problem you're exploring
-4. The DesignTeam will guide you through the process
-
-**Via GitHub Issue:**
-
-1. Create a new issue using the "Design Problem" template
-2. Assign it to @copilot
-3. A project folder and PR will be created automatically
-4. Continue work in VS Code or PR comments
+4. The DesignTeam agent will guide you through the process
 
 ## How it works
 
@@ -51,6 +44,7 @@ All stored as markdown and JSON in Git, versioned and collaborative.
 ## Documentation
 
 **Using the System:**
+- [Custom Tools](docs/CUSTOM_TOOLS.md) - Python scripts for read/edit operations
 - [Data Structures](docs/DATA_STRUCTURES.md) - Schema and templates
 - [Agent System](.github/agents/README.md) - How agents work together
 - [Skills Framework](.github/skills/README.md) - Design methods and techniques
@@ -70,8 +64,19 @@ Feedback welcome! Create an issue or start a discussion.
 
 ## Requirements
 
+### Minimum (Python-only)
+- Python 3.14+ (for tool scripts)
+- Shell access (bash, zsh, or similar)
+- Git (for version control)
+
+All tools work via command line without VS Code. See [Custom Tools](docs/CUSTOM_TOOLS.md) for usage.
+
+### Recommended (Full Experience)
 - VS Code with GitHub Copilot
-- Python 3.11+ (for helper scripts)
+- Python 3.14+
+- Git
+
+The AI agents (@DesignTeam, @Stakeholders, @LT) require GitHub Copilot but all file operations work without it.
 
 ---
 

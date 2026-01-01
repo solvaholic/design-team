@@ -103,15 +103,20 @@ def identify_gaps(state: Dict[str, Any]) -> List[str]:
 
 def main():
     parser = argparse.ArgumentParser(description="Validate project state")
-    parser.add_argument("--project", type=Path, required=True,
-                       help="Path to project directory")
+    parser.add_argument("--project", type=str, required=True,
+                       help="Project name or path to project directory")
     parser.add_argument("--json", action="store_true",
                        help="Output as JSON")
     
     args = parser.parse_args()
     
+    # Convert project name to path if needed
+    project_path = Path(args.project)
+    if not project_path.is_absolute() and not str(project_path).startswith("projects/"):
+        project_path = Path("projects") / project_path
+    
     try:
-        state = load_state(args.project)
+        state = load_state(project_path)
         errors = validate_structure(state)
         gaps = identify_gaps(state)
         

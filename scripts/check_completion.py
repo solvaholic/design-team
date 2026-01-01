@@ -121,8 +121,8 @@ def check_iterate_complete(state: Dict[str, Any]) -> tuple[bool, List[str]]:
 
 def main():
     parser = argparse.ArgumentParser(description="Check phase completion criteria")
-    parser.add_argument("--project", type=Path, required=True,
-                       help="Path to project directory")
+    parser.add_argument("--project", type=str, required=True,
+                       help="Project name or path to project directory")
     parser.add_argument("--phase", type=str,
                        help="Specific phase to check (default: current phase)")
     parser.add_argument("--json", action="store_true",
@@ -130,8 +130,13 @@ def main():
     
     args = parser.parse_args()
     
+    # Convert project name to path if needed
+    project_path = Path(args.project)
+    if not project_path.is_absolute() and not str(project_path).startswith("projects/"):
+        project_path = Path("projects") / project_path
+    
     try:
-        state = load_state(args.project)
+        state = load_state(project_path)
         phase = args.phase or state.get("phase")
         
         checkers = {

@@ -170,8 +170,8 @@ def main():
                        help="Type of artifact to create")
     parser.add_argument("--name", required=True,
                        help="Name of the artifact")
-    parser.add_argument("--project", type=Path,
-                       help="Path to project directory (not needed for project type)")
+    parser.add_argument("--project", type=str,
+                       help="Project name or path to project directory (not needed for project type)")
     parser.add_argument("--insight-type", choices=["observation", "interview", "synthesis"],
                        default="observation",
                        help="Type of insight (for insight artifacts)")
@@ -196,14 +196,19 @@ def main():
             if not args.project:
                 raise ValueError(f"--project required for {args.type} artifacts")
             
+            # Convert project name to path if needed
+            project_path = Path(args.project)
+            if not project_path.is_absolute() and not str(project_path).startswith("projects/"):
+                project_path = Path("projects") / project_path
+            
             if args.type == "insight":
-                artifact_path = scaffold_insight(args.name, args.project, args.insight_type)
+                artifact_path = scaffold_insight(args.name, project_path, args.insight_type)
             elif args.type == "idea":
-                artifact_path = scaffold_idea(args.name, args.project)
+                artifact_path = scaffold_idea(args.name, project_path)
             elif args.type == "prototype":
-                artifact_path = scaffold_prototype(args.name, args.project, args.iteration)
+                artifact_path = scaffold_prototype(args.name, project_path, args.iteration)
             elif args.type == "playback":
-                artifact_path = scaffold_playback(args.name, args.project)
+                artifact_path = scaffold_playback(args.name, project_path)
         
         print(f"Created: {artifact_path}")
         sys.exit(0)

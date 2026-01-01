@@ -123,8 +123,8 @@ def find_similar(target_project: Path, workspace: Path, threshold: float = 0.3) 
 
 def main():
     parser = argparse.ArgumentParser(description="Find similar projects")
-    parser.add_argument("--project", type=Path, required=True,
-                       help="Path to project directory")
+    parser.add_argument("--project", type=str, required=True,
+                       help="Project name or path to project directory")
     parser.add_argument("--threshold", type=float, default=0.3,
                        help="Similarity threshold (0-1, default 0.3)")
     parser.add_argument("--json", action="store_true",
@@ -132,18 +132,23 @@ def main():
     
     args = parser.parse_args()
     
+    # Convert project name to path if needed
+    project_path = Path(args.project)
+    if not project_path.is_absolute() and not str(project_path).startswith("projects/"):
+        project_path = Path("projects") / project_path
+    
     # Find workspace root (look for .github directory)
-    workspace = args.project
+    workspace = project_path
     while workspace.parent != workspace:
         if (workspace / ".github").exists():
             break
         workspace = workspace.parent
     
     try:
-        similar = find_similar(args.project, workspace, args.threshold)
+        similar = find_similar(project_path, workspace, args.threshold)
         
         result = {
-            "project": args.project.name,
+            "project": project_path.name,
             "similar_projects": similar,
             "count": len(similar)
         }

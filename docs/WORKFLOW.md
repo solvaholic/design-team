@@ -62,17 +62,17 @@ Python utilities support the workflow:
 
 **validate_state.py** - Check schema compliance and identify gaps
 ```bash
-python scripts/validate_state.py --project projects/my-project
+python scripts/validate_state.py --project my-project
 ```
 
 **check_completion.py** - Evaluate phase completion criteria
 ```bash
-python scripts/check_completion.py --project projects/my-project --phase empathize
+python scripts/check_completion.py --project my-project --phase empathize
 ```
 
 **find_similar.py** - Search for overlapping projects
 ```bash
-python scripts/find_similar.py --project projects/my-project --threshold 0.3
+python scripts/find_similar.py --project my-project --threshold 0.3
 ```
 
 **scaffold_artifact.py** - Create new artifacts from templates
@@ -81,16 +81,16 @@ python scripts/find_similar.py --project projects/my-project --threshold 0.3
 python scripts/scaffold_artifact.py --type project --name my-project --problem "..."
 
 # New insight
-python scripts/scaffold_artifact.py --type insight --name user-observation --project projects/my-project --insight-type observation
+python scripts/scaffold_artifact.py --type insight --name user-observation --project my-project --insight-type observation
 
 # New idea
-python scripts/scaffold_artifact.py --type idea --name quick-capture --project projects/my-project
+python scripts/scaffold_artifact.py --type idea --name quick-capture --project my-project
 
 # New prototype
-python scripts/scaffold_artifact.py --type prototype --name quick-capture --project projects/my-project --iteration 1
+python scripts/scaffold_artifact.py --type prototype --name quick-capture --project my-project --iteration 1
 
 # New playback
-python scripts/scaffold_artifact.py --type playback --name empathize-complete --project projects/my-project
+python scripts/scaffold_artifact.py --type playback --name empathize-complete --project my-project
 ```
 
 ## Continuous Progress

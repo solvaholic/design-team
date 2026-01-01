@@ -124,10 +124,12 @@ Keep the momentum going. The goal is **continuous forward progress** through the
 ## Helper Scripts
 
 Available in `scripts/`:
-- `validate_state.py --project [path]` - Check schema compliance and gaps
-- `check_completion.py --project [path] --phase [name]` - Evaluate readiness for next phase
-- `find_similar.py --project [path]` - Search for overlapping projects
+- `validate_state.py --project [name]` - Check schema compliance and gaps
+- `check_completion.py --project [name] --phase [name]` - Evaluate readiness for next phase
+- `find_similar.py --project [name]` - Search for overlapping projects
 - `scaffold_artifact.py --type [project|insight|idea|playback] --name [name]` - Create from template
+
+Note: All scripts accept just the project name (e.g., `my-project`) rather than requiring the full `projects/my-project` path.
 
 ## Context Available
 

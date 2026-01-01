@@ -5,7 +5,7 @@ description: Assess solution ideas on impact and feasibility to prioritize proto
 
 # Idea Evaluation
 
-## Purpose
+## Overview
 Systematically assess solution ideas to prioritize which ones to pursue through prototyping.
 
 ## When to Use

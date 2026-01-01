@@ -5,7 +5,7 @@ description: Define what to build at what fidelity to learn what you need withou
 
 # Prototype Planning
 
-## Purpose
+## Overview
 Define what to build, at what fidelity, to learn what you need to know without over-investing.
 
 ## When to Use

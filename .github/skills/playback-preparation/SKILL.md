@@ -5,7 +5,7 @@ description: Create clear leadership presentations that communicate findings and
 
 # Playback Preparation
 
-## Purpose
+## Overview
 Create clear, concise presentations for leadership that communicate findings and enable good decisions.
 
 ## When to Use

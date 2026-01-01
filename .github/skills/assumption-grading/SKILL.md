@@ -5,7 +5,7 @@ description: Assess assumptions on certainty and risk to prioritize validation e
 
 # Assumption Grading
 
-## Purpose
+## Overview
 Systematically assess assumptions to identify which ones need validation and prioritize research efforts.
 
 ## When to Use

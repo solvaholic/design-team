@@ -5,7 +5,7 @@ description: Create structured visualizations of stakeholder perspectives (says,
 
 # Empathy Mapping
 
-## Purpose
+## Overview
 Create a structured visualization of what a stakeholder says, thinks, does, and feels to build deep understanding of their perspective.
 
 ## When to Use

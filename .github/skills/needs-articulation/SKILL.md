@@ -5,7 +5,7 @@ description: Distinguish user wants from underlying needs to guide solution desi
 
 # Needs Articulation
 
-## Purpose
+## Overview
 Clearly articulate what stakeholders actually need (vs. what they ask for) to guide solution design.
 
 ## When to Use

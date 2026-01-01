@@ -32,6 +32,15 @@ Agents apply reusable skills from `.github/skills/`:
 - insight-synthesis, idea-evaluation
 - prototype-planning, playback-preparation
 
+### Custom Tool System
+This repository uses custom Python tools via `scripts/tool_runner.py` for all file operations and state management. Agents access these tools using the `execute` tool to run Python scripts.
+
+See [Custom Tools Documentation](../docs/CUSTOM_TOOLS.md) for:
+- Tool architecture and usage patterns
+- Complete list of read and edit operations
+- Standardized JSON response format
+- Integration with agents
+
 ## Working with Projects
 
 ### Project State

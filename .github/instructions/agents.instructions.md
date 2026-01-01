@@ -73,36 +73,55 @@ After frontmatter, provide detailed instructions:
 
 ## Tool Restriction Patterns
 
-Control agent capabilities by specifying tools in frontmatter:
+Control agent capabilities by specifying tools in frontmatter.
 
-### Read-Only (Planning, Research)
+### Custom Tools in This Repository
+
+**This repository uses custom Python tools via `scripts/tool_runner.py` instead of VS Code built-in tools.** This enables cross-platform compatibility and specialized operations for design thinking workflows.
+
+Agents access custom tools using the `execute` tool to run Python scripts:
+
 ```yaml
 tools:
-  - semantic_search
-  - read_file
-  - list_dir
-  - grep_search
-  - file_search
-  - fetch_webpage
+  - execute  # Shell access for running scripts/tool_runner.py
+  - agent    # (optional) For delegating to other agents
 ```
 
-### Full Access (Implementation)
+**Available custom tools:**
+- **Read-only**: `read_file`, `search_workspace`, `list_directory`, `grep_search`
+- **Edit**: `update_stakeholder`, `grade_assumption`, `add_insight`, `grade_idea`, `record_playback`, `update_phase`
+
+**Complete documentation:** See [Custom Tools System](../../docs/CUSTOM_TOOLS.md) for detailed usage, parameters, response format, and examples.
+
+### Tool Restriction by Role
+
+**Read-Only Agents** (Stakeholders, LT)
 ```yaml
 tools:
-  - read_file
-  - create_file
-  - replace_string_in_file
-  - run_in_terminal
-  - semantic_search
+  - execute  # Limited to read-only tools: read_file, search_workspace
 ```
 
-### Specialized (Code Review)
+Agents document which custom tools they use in their instructions and avoid edit operations.
+
+**Full Access Agents** (DesignTeam)
 ```yaml
 tools:
-  - read_file
-  - grep_search
-  - get_errors
-  - semantic_search
+  - execute  # Access to all read and edit tools
+  - agent    # Can delegate to @Stakeholders, @LT
+```
+
+Agents document all available custom tools with usage examples.
+
+### Generic Tool Patterns (For Other Repositories)
+
+If creating agents outside this repository, standard patterns include:
+
+```yaml
+# Read-only pattern
+tools: [semantic_search, read_file, list_dir, grep_search]
+
+# Full access pattern  
+tools: [read_file, create_file, replace_string_in_file, run_in_terminal]
 ```
 
 Omit `tools` field to allow default tool set for the agent type.

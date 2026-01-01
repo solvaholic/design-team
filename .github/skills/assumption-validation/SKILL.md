@@ -5,7 +5,7 @@ description: Test whether assumptions are true before making commitments. Use wh
 
 # Assumption Validation
 
-## Purpose
+## Overview
 Test whether an assumption is true or false before making commitments based on it.
 
 ## When to Use

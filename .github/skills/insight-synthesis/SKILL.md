@@ -5,7 +5,7 @@ description: Transform raw research into actionable insights that inform design 
 
 # Insight Synthesis
 
-## Purpose
+## Overview
 Transform raw research data into actionable insights that inform design decisions.
 
 ## When to Use

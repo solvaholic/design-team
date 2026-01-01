@@ -14,6 +14,8 @@
   "chat.useAgentSkills": true,
   "chat.customAgentInSubagent.enabled": true,
   "chat.tools.terminal.autoApprove": {
+    "echo": true,
+    "jq": true,
     "python scripts/": true,
     "python3 scripts/": true,
   },

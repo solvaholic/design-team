@@ -60,3 +60,7 @@ When working in this repository:
 - Keep currentstate.json up to date
 
 For specific file types, see path-specific instructions in `.github/instructions/`.
+
+## Documentation
+
+- [Repository instructions guide](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)
